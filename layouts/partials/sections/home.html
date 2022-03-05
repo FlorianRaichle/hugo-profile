@@ -1,0 +1,92 @@
+<div class="container-fluid home">
+  <div class="pt-5 pb-3 pt-md-0">
+    <div class="row justify-content-center intro">
+      <div class="col-md-7 pb-2 name-container">
+        <div class="name">
+          <div style="color: #{{ .Site.Params.namecolor }};" class="hi-text">
+            {{ .Site.Params.hitext | default "Hi there, I'm" }}
+          </div>
+          <h1 class="text-primary name-text">
+            {{ .Site.Params.name }}
+          </h1>
+          <h5 class="text-muted pro-text">
+            {{ .Site.Params.profession }}
+          </h5>
+        </div>
+        <div class="row social pt-4">
+          <div class="col-md-12">
+            {{ if .Site.Params.github }}
+            <a href="{{ .Site.Params.github }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+              </span>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.twitter }}
+            <a href="{{ .Site.Params.twitter }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+              </span>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.linkedin }}
+            <a href="{{ .Site.Params.linkedin }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x"></i>
+              </span>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.facebook }}
+            <a href="{{ .Site.Params.facebook }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+              </span>
+            </a>
+            {{ end }}
+
+            <!-- customSocialLinks -->
+            {{ range .Site.Params.customSocialLinks }}
+            {{ if .fontAwesomeIconName }}
+            <a href="{{ .url }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa {{ .fontAwesomeIconName }} fa-stack-1x"></i>
+              </span>
+            </a>
+            {{ else }}
+            <a href="{{ .url }}">
+              <span class="fa-stack fa-lg" class="social-icon">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <img class="fab fa-lg center" src="{{ .imageURL }}" alt="{{ .name }}" width="40%" />
+              </span>
+            </a>
+            {{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a href="#about" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            About me
+          </a>
+        </div>
+        
+
+      </div>
+      <div class="col-md-5 text-center pt-2 pt-md-0 position-relative">
+        {{ if .Site.Params.profile_image }}
+        <img class="profile rounded shadow-lg" data-aos="zoom-in" data-aos-once="true" data-aos-duration="1000"
+          src="{{ .Site.Params.profile_image }}" alt="{{ .Site.Params.name }}" class="rounded">
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</div>

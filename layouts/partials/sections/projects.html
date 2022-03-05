@@ -3,12 +3,12 @@
     <div class="text-dark text-center h3">Projects</div>
     <div class="row justify-content-center pt-2">
       {{ range ( where .Site.RegularPages "Type" "project" ) }}
-      <div class="col-md-8 pro m-3 shadow" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+      <div class="col-md-8 pro m-3">
         <div class="row">
-          <div class="col-md-6 bg-pro">
+          <div class="col-md-6 bg-slate-50">
             <img src="{{ .Params.img }}" alt="{{ .Title }}" />
           </div>
-          <div class="col-md-6 content-pro p-3 bg-light">
+          <div class="col-md-6 content-pro p-3 bg-section-dark">
             <div class="content-pro-top">
               <h2>{{ .Title }}</h2>
               <p class="card-text pt-2">{{ .Params.description }}</p>
@@ -23,20 +23,20 @@
                 <i class="fab text-dark fa-lg fa-github pro-github"></i>
               </a>
               {{ end }}
-              <a class="btn btn-sm pro-btn btn-outline-info" target="_blank" href="{{ .Permalink }}">
-                Know more...
+              <a class="btn btn-primary" href="{{ .Permalink }}">
+                More
               </a>
             </span>
           </div>
         </div>
       </div>
       {{ end }} {{ range .Site.Params.projects }}
-      <div class="col-md-8 pro m-3 shadow" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+      <div class="col-md-8 pro m-3">
         <div class="row">
-          <div class="col-md-6 bg-pro">
+          <div class="col-md-6 bg-slate-50">
             <img src="{{ .img }}" alt="{{ .name }}" />
           </div>
-          <div class="col-md-6 content-pro p-3 bg-light">
+          <div class="col-md-6 content-pro p-3 bg-section-dark">
             <div class="content-pro-top">
               <h2>{{ .name }}</h2>
               <p class="card-text pt-2">{{ .description }}</p>

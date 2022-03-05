@@ -16,8 +16,8 @@ li> .dropdown-toggle:focus{
 /* v2 and v3 footer */
 footer {
   color: #8392a5;
-  border-top-width: 1px !important;
-  border-color: #8392a5;
+  /* border-top-width: 1px !important; */
+  /* border-color: #8392a5; */
 }
 
 footer a {

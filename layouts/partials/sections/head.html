@@ -5,10 +5,20 @@
 <!-- Google analytics -->
 {{ template "_internal/google_analytics.html" . }}
 <!-- stylesheets -->
+<script src="https://kit.fontawesome.com/7d50191906.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">
 <link rel="stylesheet" href="/css/all.min.css" media="all">
 <link rel="stylesheet" href="/css/fontawesome.min.css" media="all">
 <link rel="stylesheet" href="/css/v3/darkmode.css" media="all">
+
+{{ $styles := resources.Get "/css/style.css" }}
+
+{{ if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+{{ else }}
+  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+{{ end }}
 
 <style>
     html {

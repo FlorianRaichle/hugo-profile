@@ -9,6 +9,14 @@ a:hover {
   text-decoration: none;
 }
 
+ul {
+  padding-inline-start: 0px;
+}
+
+.section-dark {
+  background-color: #dce6f1;
+}
+
 /* v3 home */
 .name {
   padding-left: 3%;
@@ -24,11 +32,8 @@ a:hover {
   font-size: 25px;
 }
 .btn-intro {
-  padding-left: 3%;
+  /* padding-left: 3%; */
   padding-bottom: 10%;
-}
-.social {
-  padding-left: 5%;
 }
 .btn-know {
   padding: 2% 5% 2% 5%;
@@ -40,16 +45,14 @@ a:hover {
 }
 .social-icon {
   padding: 2%;
-  background-color: #f9fafc !important;
+  /* background-color: #f9fafc !important; */
   color: #007bff !important;
-  border: 1px solid #007bff;
-  border-radius: 50%;
   transition: 0.3s;
 }
 .social-icon:hover {
-  background-color: #007bff !important;
+  /* background-color: #007bff !important; */
   color: #f9fafc !important;
-  border: 1px solid #007bff;
+  /* border: 1px solid #007bff; */
 }
 .intro {
   padding: 8% 0 8% 0;
@@ -92,9 +95,6 @@ a:hover {
 }
 
 /* v3 about */
-.about-back {
-  background-color: #dce6f1;
-}
 .about {
   padding-top: 3% !important;
   padding-bottom: 3% !important;
@@ -141,6 +141,7 @@ a:hover {
 .bg-pro {
   padding: 0 !important;
   opacity: 0.9;
+  background-color: #f4f4f4;
 }
 .bg-pro img {
   height: 300px;
@@ -151,13 +152,13 @@ a:hover {
 }
 .content-pro {
   height: 300px;
-  background-color: #e5e4e2 !important;
+  /* background-color: #dce6f1 !important; */
   border-top-right-radius: 0.5rem !important;
   border-bottom-right-radius: 0.5rem !important;
 }
 .content-pro-top {
   color: #3a3b3c !important;
-  height: 80%;
+  height: 85%;
 }
 .pro-github {
   color: #3a3b3c !important;
@@ -205,32 +206,94 @@ a:hover {
 }
 
 /* v3 experience */
-#nav-pills-out {
-  border-left: 1px solid #007bff;
+.history {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
-.nav-pills .active {
-  padding-left: 20%;
-  color: #818181 !important;
-  background-color: transparent !important;
-}
-.nav-pills .active::before {
-  padding-left: 8%;
-  content: "▹";
+.history:before {
   position: absolute;
-  left: 0px;
-  color: #007bff;
+  display: block;
+  top: 0;
+  bottom: 0;
+  background-color: #cfd1d7;
+  left: 50%;
+  width: 2px;
+  -webkit-transform: translateX(-1px);
+  transform: translateX(-1px);
+  content: "";
+}
+.history-item {
+  position: relative;
+  width: 50%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.history-item:nth-child(odd){
+  align-self: flex-end;
+  padding-left: 3rem;
+}
+.history-item:nth-child(even){
+  align-self: flex-start;
+  padding-right: 3rem;
+  text-align: right;
+}
+.history-item .dot-double {
+  position: absolute;
+  top: 50%;
+  background-color: #1f1f1f;
+  display: inline-block;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+}
+.history-item:nth-child(odd) .dot-double{
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  left: 0;
+}
+.history-item:nth-child(even) .dot-double{  
+  -webkit-transform: translate(50%,-50%);
+  transform: translate(50%,-50%);
+  right: 0;
+}
+.history-item:first-child .dot-double:after {
+  background-color: #007bff;
+}
+.dot-double:after {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  content: "";
 }
 .ex {
   list-style-type: none;
 }
 .ex .ex-item {
-  padding-left: 30px;
+  /* padding-left: 10px; */
+  display: block;
+}
+.ex .ex-item span {
+  display: inline-block;
+  vertical-align: middle;
 }
 .ex-item::before {
-  padding-left: 8%;
-  content: "▹";
-  position: absolute;
-  left: 0px;
+  content: "";
+  /* position: absolute; */
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
   color: #007bff;
 }
 .ex-ol {
@@ -252,7 +315,7 @@ a:hover {
 .ex-ol-item::before {
   padding-left: 15%;
   content: "▹";
-  position: absolute;
+  /* position: absolute; */
   left: 0px;
   color: #007bff;
 }
@@ -269,9 +332,6 @@ a:hover {
 }
 
 /* v3 education */
-.education-back {
-  background-color: #e1e0e5;
-}
 .v-center {
   display: flex;
   align-items: center;
@@ -329,9 +389,6 @@ a:hover {
 }
 
 /* v3 Achievements */
-.achievements-back {
-  background-color: #dce6f1;
-}
 .achiv-card:hover {
   filter: grayscale(100%);
 }
