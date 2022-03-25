@@ -1,4 +1,89 @@
-<div class="container">
+<nav class="" x-data="{open: false}">
+  <div class="mx-auto px-3.5 sm:px-6">
+    <div class="relative flex items-center justify-between h-16">
+      <a class=" flex flex-row items-center navbar-brand pl-3" href="{{ .Site.BaseURL | relURL }}">
+        {{ if .Site.Params.logo }}
+        <img src="{{ .Site.Params.logo }}" width="70" height="70">
+        <!-- <div class="d-inline-block align-top ">           -->
+          <div style="-webkit-mask-image: url({{ .Site.Params.logo }});
+          mask-image: url({{ .Site.Params.logo }});
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          mask-size: contain;">
+            <div class="bg-blue-500 w-[70px] h-[56px]"></div>
+          <!-- </div> -->
+        </div>        
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
+      </a>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-end">
+        <div class="hidden sm:block sm:ml-6 pl-5">
+          <div class="flex items-center space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#about" class="text-black-300 hover:text-blue-500 font-medium">About</a>
+
+            <a href="#experience" class="text-black-300 hover:text-blue-500 font-medium">Experience</a>
+
+            <a href="#education" class="text-black-300 hover:text-blue-500 font-medium">Education</a>
+
+            <a href="#projects" class="text-black-300 hover:text-blue-500 font-medium">Projects</a>
+            {{/*  <div x-data="{isDark: false}">
+              <input type="checkbox" class="absolute opacity-0 -z-10" id="customSwitch1" autocomplete="on" @click="isDark = ! isDark">
+              <label class="pt-2 darkmode-label" for="customSwitch1" style="cursor: pointer;">
+                <i class="fas fa-lg fa-moon" x-show="isDark"></i>
+                <i class="fas fa-lg fa-sun text-warning" x-show="!isDark"></i>
+              </label>
+            </div>  */}}
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+        <button @click="open = !open" type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu" x-show="open" x-collapse style="display: none;">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="#about" class="text-black-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">About</a>
+
+      <a href="#experience" class="text-black-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+
+      <a href="#education" class="text-black-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Education</a>
+
+      <a href="#projects" class="text-black-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+    </div>
+  </div>
+</nav>
+
+
+{{/*  <div class="container">
   <nav class="pt-3 navbar navbar-expand-lg navbar-light" data-aos="fade-down" data-aos-easing="linear"
     data-aos-duration="500">
     <a class="navbar-brand" href="{{ .Site.BaseURL | relURL }}">
@@ -81,7 +166,7 @@
           </div>
         </li>
 
-        {{/*
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{{ .URL }}" id="navbarDropdown" role="button"
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ .Title }}">
@@ -93,7 +178,7 @@
               {{ .Name }}</a>
             {{ end }}
           </div>
-        </li> */}}
+        </li>-->
         {{else}}
         <!-- Single menu item -->
         <li class="nav-item navbar-text">
@@ -117,4 +202,4 @@
       </ul>
     </div>
   </nav>
-</div>
+</div>  */}}
