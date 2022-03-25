@@ -4,16 +4,6 @@
       <a class=" flex flex-row items-center navbar-brand pl-3" href="{{ .Site.BaseURL | relURL }}">
         {{ if .Site.Params.logo }}
         <img src="{{ .Site.Params.logo }}" width="70" height="70">
-        <!-- <div class="d-inline-block align-top ">           -->
-          <div style="-webkit-mask-image: url({{ .Site.Params.logo }});
-          mask-image: url({{ .Site.Params.logo }});
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-          -webkit-mask-size: contain;
-          mask-size: contain;">
-            <div class="bg-blue-500 w-[70px] h-[56px]"></div>
-          <!-- </div> -->
-        </div>        
         {{ else }}
         {{ .Site.Title }}
         {{ end }}

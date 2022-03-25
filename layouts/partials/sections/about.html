@@ -1,43 +1,33 @@
-<div id="about" class="about-backdark bg-section-dark">
-  <section class="pt-5">
-    <div class="container-fluid">
-      <div class="text-dark text-center h3">About Me</div>
-      <div class="row justify-content-center about">
-        <div class="col-md-6 about-content">
-          <div data-aos="zoom-in-up" data-aos-offset="50" data-aos-delay="50" data-aos-once="true"
-            data-aos-duration="900">
-            <div class="px-2">
-              {{ .Site.Params.descripe_l1_person | markdownify }}
-              <br />
-              <br />
-              {{ .Site.Params.descripe_l2_person | markdownify }}
-            </div>
-            {{ if .Site.Params.email }}
-            <div class="py-3 pl-2">
-              <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" target="_blank"
-                class="contact-btn btn text-muted">
-                {{ .Site.Params.getintouch | default "Get in Touch" }}
-              </a>
-            </div>
-            {{ end }}
-          </div>
+<section id="about" class="about-backdark bg-section-dark overflow-hidden">
+  <div class="text-dark text-center text-2xl pt-4">About Me</div>
+  <div class="flex flex-col md:flex-row gap-16 justify-content-center py-4 md:px-[10%]">
+    <div class="col-md-6 basis-3/4">
+        <div class="px-2">
+          {{ .Site.Params.descripe_l1_person | markdownify }}
+          <br />
+          <br />
+          {{ .Site.Params.descripe_l2_person | markdownify }}
         </div>
-        <div class="col-md-5 about-skill">
-          <div data-aos="zoom-in-down" data-aos-offset="50" data-aos-delay="50" data-aos-once="true"
-            data-aos-duration="1000">
-            <div class="text-secondary text-center h4">Skills</div>
-            {{ range .Site.Params.skills }}
-            <div>
-              <div>{{ .name }}</div>
-              <div class="progress mb-4">
-                <div class="progress-bar" role="progressbar" style="width: {{ .percentage }}%;" aria-valuemin="0"
-                  aria-valuemax="100"></div>
-              </div>
-            </div>
-            {{ end }}
-          </div>
+        {{ if .Site.Params.email }}
+        <div class="py-3 pl-2 mt-3 ">
+          {{/*  <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" target="_blank"
+            class="contact-btn btn text-muted">
+            {{ .Site.Params.getintouch | default "Get in Touch" }}
+          </a>  */}}
+          <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" target="_blank" 
+          class="hover:bg-blue-700 text-blue-700 hover:text-white py-2 px-4 border border-solid border-blue-500  rounded-full">
+            {{ .Site.Params.getintouch | default "Get in Touch" }}
+          </a>            
         </div>
+        {{ end }}
+    </div>
+    <div class="md:pl-0 basis-1/4">
+      <div class="text-secondary h4 pb-2">Skills</div>
+      <div class="flex flex-row md:flex-col gap-2">
+      {{ range .Site.Params.skills }}
+        <div class="bg-primary text-white px-3 py-2 w-fit h-fit whitespace-nowrap">{{ .name }}</div>
+        {{ end }}
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

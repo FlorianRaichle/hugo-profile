@@ -1,8 +1,7 @@
-<section id="experience">
-  <div class="container-fluid pt-5 pb-5">
-    <div class="text-dark text-center h3">Experience</div>
-
-    <div class="history">
+<section id="experience" class="pb-3">
+  <div class="container-fluid">
+    <div class="text-dark text-center text-2xl p-5">Experience</div>
+    <div class="history p-5">
         {{ range $index, $element := sort .Site.Data.experience "startdate"}}
             <div class="history-item" id="{{ .company }}">
               <span class="dot-double"></span>

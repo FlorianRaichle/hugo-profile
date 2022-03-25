@@ -1,8 +1,7 @@
 <section id="contact">
-  <div class="container-fluid py-5">
-    <div class="text-right text-center h3">Get In Touch</div>
-    <div class="row justify-content-center px-md-5">
-      <div class="col-md-6 py-3">
+  <div class="container mx-auto py-5 text-center ">
+    <div class="text-2xl p-5">Get In Touch</div>
+      <div class="max-w-md mx-auto py-3 justify-center ">
         <div class="text-center">{{ .Site.Params.contact_content | emojify | markdownify }}</div>
         {{ if .Site.Params.email }}
         <div class="text-center pt-3">
@@ -12,6 +11,5 @@
         </div>
         {{ end }}
       </div>
-    </div>
   </div>
 </section>

@@ -17,7 +17,6 @@
 
 <body class="text-dark bg-slate-100">
   <!--<div id="loader" class="center"></div>-->
-  <div>
     {{- partial "sections/navbar.html" . -}}
 
     {{ if .Site.Params.disable_home }}
@@ -57,11 +56,10 @@
 
     {{- partial "sections/footer.html" . -}}
     {{- partial "sections/scripts.html" . -}}
-  </div>
 
   <!-- Darkmode -->
   <script>
-    function autoDarkMode() {
+    {{/*  function autoDarkMode() {
       $("body").toggleClass("darkmode");
       $(".fa-moon").addClass("d-none");
       $(".fa-sun").removeClass("d-none");
@@ -73,9 +71,9 @@
       $(".education-backdark").toggleClass("education-back");
       $(".achievements-backdark").toggleClass("achievements-back");
       $(".dropdown-menu").toggleClass('darkmode-dropdown-menu');
-    }
+    }  */}}
   </script>
-  <script src="/js/auto_darkmode.js"></script>
+  {{/*  <script src="/js/auto_darkmode.js"></script>  */}}
   <script>
     /*
     document.onreadystatechange = function () {
@@ -93,7 +91,7 @@
     };
     */
 
-    $(".darkmode-label").click(function () {
+    {{/*  $(".darkmode-label").click(function () {
       $("body").toggleClass("darkmode");
       $(".fa-moon").toggleClass("d-none");
       $(".fa-sun").toggleClass("d-none");
@@ -107,7 +105,7 @@
       $(".dropdown-menu").toggleClass('darkmode-dropdown-menu');
 
       switchDarkmodeSetting();
-    });
+    });  */}}
 
 
   </script>
