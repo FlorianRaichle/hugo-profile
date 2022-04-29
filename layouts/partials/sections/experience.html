@@ -1,12 +1,18 @@
-<section id="experience" class="pb-3">
-  <div class="container-fluid">
-    <div class="text-dark text-center text-2xl p-5">Experience</div>
-    <div class="history p-5">
+<section id="experience" class="pb-3 px-10">
+  <div class="max-w-screen-lg mx-auto py-10">
+    <div class="text-primary text-5xl pb-10 font-bold font-heading">Experience</div>
+    <div class="flex flex-col py-6 gap-14 relative
+    before:absolute before:w-0 before:block before:border-light before:top-0 before:bottom-0 md:before:left-1/2 
+    before:border-r-4 md:before:-translate-x-0.5">
         {{ range $index, $element := sort .Site.Data.experience "startdate"}}
-            <div class="history-item" id="{{ .company }}">
+            <div class="relative md:w-1/2 md:odd:self-end px-12 odd:text-left md:even:self-start md:even:text-right
+            before:absolute before:w-0 before:border-primary before:top-0 before:bottom-0 before:left-0 
+            md:even:before:right-0 md:even:before:left-auto md:even:before:translate-x-0.5 
+            md:odd:before:-translate-x-0.5 before:border-r-4"
+            id="{{ .company }}">
               <span class="dot-double"></span>
               <div class="h4 text-muted">
-                <span class="text-primary">{{ .company }}</span> - {{ .role }}
+                <span class="text-accent">{{ .company }}</span> - {{ .role }}
               </div>
               <div>
                 <small>{{ .startdate }}</small>

@@ -1,59 +1,28 @@
-<section id="projects">
-  {{/*  <div class="container-fluid py-5">
-    <div class="text-dark text-center h3">Projects</div>
-    <div class="row justify-content-center pt-2">
-      {{ range ( where .Site.RegularPages "Type" "project" ) }}
-      <div class="col-md-8 pro m-3">
-        <div class="row">
-          <div class="col-md-6 bg-slate-50">
-            <img src="{{ .Params.img }}" alt="{{ .Title }}" />
+<section id="projects" class="px-10">
+  <div class="max-w-screen-lg mx-auto py-10">
+    <div class="text-primary text-5xl pb-16 font-heading">Projects</div>
+    <div class="flex flex-col gap-20">
+    {{ range ( where .Site.RegularPages "Type" "in" .Site.Params.projectTypes ) }}
+      <div class="overflow-hidden md:max-w-2xl">
+        <div class="flex md:flex-row md:space-x-10 flex-col-reverse gap-4">
+          <div class="">
+            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">{{.Type}}</div>
+            <a href="{{ .Permalink }}" class="block mt-1 text-2xl leading-tight font-medium text-primary hover:underline">{{.Title}}</a>
+            <p class="mt-2 text-light">{{.Params.description}}</p>
           </div>
-          <div class="col-md-6 content-pro p-3 bg-section-dark">
-            <div class="content-pro-top">
-              <h2>{{ .Title }}</h2>
-              <p class="card-text pt-2">{{ .Params.description }}</p>
-            </div>
-            <span class="float-right">
-              {{ if .Params.featured }}
-              <a href="{{ .Params.featured }}" class="px-1">
-                <i class="fas text-info fa-link"></i>
-              </a>
-              {{ end }} {{ if .Params.github }}
-              <a href="{{ .Params.github }}" class="px-1 pr-2">
-                <i class="fab text-dark fa-lg fa-github pro-github"></i>
-              </a>
-              {{ end }}
-              <a class="btn btn-primary" href="{{ .Permalink }}">
-                More
-              </a>
-            </span>
+          {{ if .Params.image}}
+          <div class="md:shrink-0">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src={{ .Params.image }} alt="Man looking at item at a store">
           </div>
+          {{end}}
+        </div>
+        <div class="pt-4">
+          <a class="hover:underline" href="{{ .Permalink }}">
+            <i class="fa-solid fa-arrow-right"></i> See More
+          </a>
         </div>
       </div>
-      {{ end }}
-    </div>
-  </div>  */}}
-  
-  <div class="text-dark text-center text-2xl p-5">Projects</div>
-  <div class="space-y-3">
-  {{ range ( where .Site.RegularPages "Type" "in" .Site.Params.projectTypes ) }}
-  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl relative">
-    <div class="md:flex">
-      {{ if .Params.image}}
-      <div class="md:shrink-0">
-        <img class="h-48 w-full object-cover md:h-full md:w-48" src={{ .Params.image }} alt="Man looking at item at a store">
-      </div>
-      {{end}}
-      <div class="p-8 pb-10">
-        <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">{{.Type}}</div>
-        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{.Title}}</a>
-        <p class="mt-2 text-slate-500">{{.Params.description}}</p>        
-      </div>
-    </div>
-    <a class="absolute bottom-3 right-5 hover:underline" href="{{ .Permalink }}">
-      <i class="fa-solid fa-arrow-right"></i> See More
-    </a>
+    {{end}}
   </div>
-  {{end}}
 </div>
 </section>

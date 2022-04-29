@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 {{ end }}
 
-<style>
+<!-- <style>
     html {
         scrollbar-width: thin;
         scrollbar-color: #6c757d transparent;
@@ -41,8 +41,12 @@
     ::-webkit-scrollbar-thumb {
         background: #6c757d;
     }
+</style> -->
+<style>
+    [x-cloak] {
+    display: none !important;
+}
 </style>
-
 
 <!-- Custom Styles -->
 {{ if .Site.Params.customCSS }}
