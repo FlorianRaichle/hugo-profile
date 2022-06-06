@@ -1,4 +1,4 @@
-<section id="projects" class="px-10">
+<section id="projects" class="px-10 scroll-m-16">
   <div class="max-w-screen-lg mx-auto py-10">
     <div class="text-primary text-5xl pb-16 font-heading">Projects</div>
     <div class="flex flex-col gap-20">
@@ -6,8 +6,8 @@
       <div class="overflow-hidden md:max-w-2xl">
         <div class="flex md:flex-row md:space-x-10 flex-col-reverse gap-4">
           <div class="">
-            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">{{.Type}}</div>
-            <a href="{{ .Permalink }}" class="block mt-1 text-2xl leading-tight font-medium text-primary hover:underline">{{.Title}}</a>
+            <div class="uppercase tracking-wide text-sm text-accent font-semibold">{{.Type}}</div>
+            <a href="{{ .RelPermalink }}" class="block mt-1 text-2xl leading-tight font-medium text-primary hover:underline">{{.Title}}</a>
             <p class="mt-2 text-light">{{.Params.description}}</p>
           </div>
           {{ if .Params.image}}

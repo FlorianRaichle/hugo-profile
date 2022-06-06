@@ -1,23 +1,22 @@
-<section id="about" class="about-backdark bg-alternate overflow-hidden px-10">
+{{ range first 1 (where .Site.Params.sections "name" "about") }}
+<section id="about" class="about-backdark bg-alternate px-10 scroll-m-16">  
   <div class="max-w-screen-lg mx-auto py-10">
     <div class="flex flex-col md:flex-row gap-5 md:gap-16 justify-content-center">
       <div class="col-md-6 basis-3/4">
         <div class="text-primary text-5xl pb-16 font-heading">About Me</div>
         <div class="text-primary">
-          {{ .Site.Params.descripe_l1_person | markdownify }}
-          <br />
-          <br />
-          {{ .Site.Params.descripe_l2_person | markdownify }}
+          {{ .description | markdownify }}
         </div>
     </div>
     <div class="md:pl-0 basis-1/4 md:py-7">
       <div class="text-secondary h4 pb-2">Skills</div>
       <div class="flex flex-row md:flex-col gap-4">
-      {{ range .Site.Params.skills }}
-        <div class="text-primary w-fit h-fit whitespace-nowrap">{{ .name }}</div>
+        {{range .skills}}
+          <div class="text-primary w-fit h-fit whitespace-nowrap border-b-2 border-primary">{{ .name }}</div>
         {{ end }}
       </div>
     </div>
   </div>
 </div>
 </section>
+{{ end }}

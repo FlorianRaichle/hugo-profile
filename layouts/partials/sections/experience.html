@@ -1,31 +1,29 @@
-<section id="experience" class="pb-3 px-10">
+<section id="experience" class="pb-3 px-10 scroll-m-16">
   <div class="max-w-screen-lg mx-auto py-10">
-    <div class="text-primary text-5xl pb-10 font-bold font-heading">Experience</div>
+    <div class="text-primary text-5xl pb-20 font-bold font-heading">Experience</div>
     <div class="flex flex-col py-6 gap-14 relative
-    before:absolute before:w-0 before:block before:border-light before:top-0 before:bottom-0 md:before:left-1/2 
-    before:border-r-4 md:before:-translate-x-0.5">
-        {{ range $index, $element := sort .Site.Data.experience "startdate"}}
-            <div class="relative md:w-1/2 md:odd:self-end px-12 odd:text-left md:even:self-start md:even:text-right
-            before:absolute before:w-0 before:border-primary before:top-0 before:bottom-0 before:left-0 
-            md:even:before:right-0 md:even:before:left-auto md:even:before:translate-x-0.5 
-            md:odd:before:-translate-x-0.5 before:border-r-4"
-            id="{{ .company }}">
-              <span class="dot-double"></span>
-              <div class="h4 text-muted">
-                <span class="text-accent">{{ .company }}</span> - {{ .role }}
-              </div>
-              <div>
-                <small>{{ .startdate }}</small>
-                -
-                <small>{{ .enddate }}</small>
-              </div>
-              <ul class="py-2 ex">
-                {{ range .featuredpoints }}
-                <li class="ex-item"><span>{{ .point }}</span></li>
-                {{ end }}
-              </ul>
-            </div>
-        {{ end }}
+    before:absolute before:w-0 before:block before:border-primary-100 before:top-0 before:bottom-0
+    before:border-r-2">
+      {{ range $index, $element := sort .Site.Data.experience "startdate"}}
+        <div id="{{ .company }}" class="relative px-24 odd:text-left ">
+          <div class="left-0 top-[11px] w-20 h-1 -translate-x-4 border-b-2 border-primary-100 absolute"></div>
+          <div class="left-0 top-[4px] w-5 h-5 -translate-x-[9px] border-2 border-primary absolute rounded-full"></div>
+          <span class="dot-double"></span>
+          <div class="h4 text-muted">
+            <span class="text-accent">{{ .company }}</span> - {{ .role }}
+          </div>
+          <div>
+            <small>{{ .startdate }}</small>
+            -
+            <small>{{ .enddate }}</small>
+          </div>
+          <ul class="py-2 ex">
+            {{ range .featuredpoints }}
+            <li class="ex-item"><span>{{ .point }}</span></li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
     </div>
   </div>
 </section>

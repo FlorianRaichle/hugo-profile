@@ -14,6 +14,9 @@
         --text-light: 100 116 139;
         
         --accent-light: 203 213 225;
+
+        --primary: 0 123 255;
+        --primary-100: 219 233 255;
     }
     .dark {
         --mybg-normal: 17 32 47;
@@ -25,6 +28,23 @@
         --text-light: 131 146 165;
 
         --accent-light: 255 255 255;
+
+        --primary: 0 123 255;
+        --primary-100: 219 233 255;
+    }
+    .alternate {
+        --mybg-normal: 255 254 254;
+        --mybg-alternate: 255 255 254;
+
+        --text-primary: 52 58 64;
+        --text-secondary: 255 255 255;
+        --text-accent: 255 90 27;
+        --text-light: 100 116 139;
+        
+        --accent-light: 203 213 225;
+
+        --primary: 255 90 27;
+        --primary-100: 255 192 153;
     }
 }
 

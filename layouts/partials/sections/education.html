@@ -1,10 +1,10 @@
-<section id="education" class="education-backdark bg-alternate px-10">
+<section id="education" class="education-backdark bg-alternate px-10 scroll-m-16">
   <div class=" max-w-screen-lg mx-auto py-10">
     <div class="text-primary text-5xl pb-10 font-heading">Education</div>
     {{ range .Site.Data.education }}    
     <div class="overflow-hidden md:max-w-2xl relative">
       <div class="pb-4">
-        <div class="uppercase tracking-wide  text-blue-500 font-semibold">{{ .degree }} - {{ .branch }}</div>
+        <div class="uppercase tracking-wide  text-accent font-semibold">{{ .degree }} - {{ .branch }}</div>
         <a href="#" class="block mt-1 text-lg leading-tight font-medium text-primary hover:underline">{{.university}}</a>
         <p class="text-slate-500"><small>{{ .startedyear }}</small> - <small>{{ .graduation}}</small></p>
       </div>
