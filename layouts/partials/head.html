@@ -2,18 +2,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="{{ .Site.Params.favicon | default " /images/favicon.png"}}" type="image/gif">
-<!-- Google analytics -->
-{{ template "_internal/google_analytics.html" . }}
 <!-- stylesheets -->
 <script src="https://kit.fontawesome.com/7d50191906.js" crossorigin="anonymous"></script>
 <!-- Alpine Plugins -->
 <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script> 
 <!-- Alpine Core -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-{{/*  <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">  */}}
 <link rel="stylesheet" href="/css/all.min.css" media="all">
 <link rel="stylesheet" href="/css/fontawesome.min.css" media="all">
-<link rel="stylesheet" href="/css/v3/darkmode.css" media="all">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+<meta name="description" content="{{ .Site.Params.description }}">
+<link rel="stylesheet" href="/css/v3/v3.css" media="all">
 
 {{ $styles := resources.Get "/css/style.css" }}
 

@@ -1,12 +1,12 @@
 <nav class="sticky top-0 bg-base z-50 px-10" x-data="{open: false}">
   <div class="max-w-screen-lg mx-auto">
     <div class="relative flex items-center justify-between h-16">
-      <a class=" flex flex-row items-center navbar-brand" href="{{ .Site.BaseURL | relURL }}#">
+      <a class=" flex flex-row items-center navbar-brand" href="{{ .Site.BaseURL | relURL }}">
         {{ if .Site.Params.logo_light }}
         <div x-show="!isDark">
           <img src="{{ .Site.Params.logo_light }}" width="70" height="70">
         </div>
-        <div x-cloak x-show="isDark" >
+        <div x-show="isDark" >
           <img src="{{ .Site.Params.logo_dark }}" width="70" height="70">
         </div>
         {{ else }}
@@ -25,7 +25,21 @@
 
             <a href="{{ .Site.BaseURL | relURL }}#projects" class="text-primary hover:text-accent font-medium">Projects</a>
             <div>
-              <input type="checkbox" class="absolute opacity-0 -z-10" id="customSwitch1" autocomplete="on" @click="isDark = ! isDark">
+              <input type="checkbox" class="absolute opacity-0 -z-10" id="customSwitch1" autocomplete="on"
+              x-data="{
+                toggle: () => {
+                    if (localStorage.theme === 'dark') {
+                        localStorage.theme = 'light';
+                        document.documentElement.classList.remove('dark');
+                        isDark = false
+                      } else {
+                        localStorage.theme = 'dark';
+                        isDark = true
+                        document.documentElement.classList.add('dark');
+                    }
+                },
+            }"
+              @click="toggle">
               <label class="pt-2 darkmode-label" for="customSwitch1" style="cursor: pointer;">
                 <i x-cloak class="fas fa-lg fa-moon" x-show="isDark"></i>
                 <i class="fas fa-lg fa-sun text-warning" x-show="!isDark"></i>

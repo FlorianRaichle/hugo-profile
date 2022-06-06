@@ -5,12 +5,12 @@
 
 
 {{ define "main" }}
-<section style="font-family: 'Roboto', sans-serif;">
-  <div class="prose max-w-screen-lg mx-auto">
+<section>
+  <div x-bind:class="isDark ? 'prose prose-invert max-w-screen-lg mx-auto' : 'prose max-w-screen-lg mx-auto'">
     <div class="row blog-page-color p-5">
       <div class="col-md-9 py-4 px-0">
         <h1 class="pb-2 text-center text-primary">{{ .Title }}</h1>
-        <article>
+        <article class="text-primary">
           {{.Content}}
         </article>
       </div>
