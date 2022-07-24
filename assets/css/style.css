@@ -1058,6 +1058,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.25rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1166,6 +1170,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .scroll-m-16 {
   scroll-margin: 4rem;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-row {
@@ -1548,6 +1560,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.marker\:text-accent *::marker {
+  --tw-text-opacity: 1;
+  color: rgb(var(--text-accent)/ var(--tw-text-opacity));
+}
+
+.marker\:text-accent::marker {
+  --tw-text-opacity: 1;
+  color: rgb(var(--text-accent)/ var(--tw-text-opacity));
 }
 
 .before\:absolute::before {
