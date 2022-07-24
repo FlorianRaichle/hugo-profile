@@ -1,47 +1,38 @@
 <div align="center">
   
 # hugo-profile 
- 
-[![Twitter](https://img.shields.io/twitter/url?label=Tweet&style=social&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile) [![GitHub forks](https://img.shields.io/github/forks/gurusabarish/hugo-profile?style=plastic)](https://github.com/gurusabarish/hugo-profile/network) [![GitHub stars](https://img.shields.io/github/stars/gurusabarish/hugo-profile?style=plastic)](https://github.com/gurusabarish/hugo-profile/stargazers)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c1dcb34-cada-4c80-82b7-cfdbdbd7c774/deploy-status)](https://app.netlify.com/sites/hugo-profile/deploys)
-![Repository Size](https://img.shields.io/github/repo-size/gurusabarish/hugo-profile)
-![Latest Release](https://img.shields.io/github/v/release/gurusabarish/hugo-profile?include_prereleases)
-![Last Commit](https://img.shields.io/github/last-commit/gurusabarish/hugo-profile)
-![Open Issues](https://img.shields.io/github/issues/gurusabarish/hugo-profile?color=important)
-![Open Pull Requests](https://img.shields.io/github/issues-pr/gurusabarish/hugo-profile?color=yellowgreen)
 ![License](https://img.shields.io/github/license/gurusabarish/hugo-profile)
 
 </div>
 
-A high performance and mobile first hugo template for personal portfolio and blog
+A hugo template for a portfolio website.
+The home page consists of sections that take their content from the content folder.
+The template generally follows the hugo content structure so you can have dedicated pages for projects, for example.
 
-### Credit
-
-I spent an amount of effort building this template. It's always disheartening whenever I find that someone use this template without giving me credit. Please, give me proper credit in footer.
+Features
+- Flexible with extensible content
+- Dark theme
 
 ### Demo
 
-- [Live demo V1](https://hugo-profile-1.netlify.app)
-- [Live demo V2](https://hugo-profile-2.netlify.app)
-- [Live demo V3 (latest)](https://hugo-profile.netlify.app)
 - [Github pages demo](https://gurusabarish.github.io/hugo-profile)
 
-## Requirements
+## Dependencies
 
-- Hugo Version 0.68.0 or higher
+- [Hugo](https://gohugo.io/)
+- [Alpine.js](https://alpinejs.dev/)
+- For Development:
+    - [tailwindcss](https://tailwindcss.com/)
 
 ## How to use this template
 
 - [Hugo theme format](#Hugo-theme-format)
-- [Local Development](#Local-Development)
-- [Direct deployment using netlify](#Direct-deployment-using-netlify)
 - [Direct deployment using Github Pages and action](#Direct-deployment-using-Github-Pages-and-action)
 
 ### Hugo theme format
 
 - Install Hugo and create a site using `hugo new site my-site -f=yaml`
-- Clone this repo inside your themes folder and create config.yaml (_I am not much aware about toml. So, I am using yaml format._) inside root folder and use one of these [v1config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v1.yaml), [v2config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v2.yaml), [v3config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v3.yaml) as base template.
+- Clone this repo inside your themes folder and create config.yaml inside root folder and use [config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v3.yaml) as base template.
 
 ```
 cd themes
@@ -49,25 +40,6 @@ git clone https://github.com/gurusabarish/hugo-profile.git
 ```
 
 - You should have the mentioned (_inside the config file_) images in static folder to use them.
-
-### Local Development
-
-- Install hugo and just clone this repo
-
-```
-git clone https://github.com/gurusabarish/hugo-profile.git
-cd hugo-profile
-```
-
-- Now create config.yaml file in your root folder and use one of these [v1config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v1.yaml), [v2config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v2.yaml), [v3config](https://github.com/gurusabarish/hugo-profile/blob/master/website/v3.yaml) as base template.
-- Run your site using `hugo serve` commend
-
-### Direct deployment using netlify
-
-- Fork this repo or create new repo using `use this template` button and connect repo to netlify.
-- You can customize the config file, content and everything inside website folder. Netlify will automatically deploy your changes every time you modify the repo.
-
-**[What is netlify?](https://www.netlify.com/about/)** An intuitive Git-based workflow and powerful serverless platform to build, deploy, and collaborate on web apps
 
 ### Direct deployment using Github Pages and action
 
@@ -77,8 +49,17 @@ cd hugo-profile
 - If you clone the repo locally, you can veiw the local change with `hugo  --gc --minify --themesDir . serve` from within the website dir.
 
 ## Deployment
+If you don't change the template, hugo is all you need to build the site.
+Run `hugo`. It will generate a folder called public. You can use the files inside public folder for deployment. You should delete the public folder for each time you are using `hugo` command.
 
-Run `hugo`. It will generate a folder called public. You can use the files inside public folder for deployment. You should delete the public folder for each time when you are using `hugo` commend.
+## Development
+If you would like to make changes to the templates, you have to install tailwind.js first.
+package.json includes a build script that automatically runs tailwind after changes to generate the css files.
+Use it by running `npm run start`
+
+### Credit
+
+Originally based on [hugo profile](https://github.com/gurusabarish/hugo-profile) gurusabarish by but now heavily modified.
 
 ## Issues
 
@@ -91,9 +72,3 @@ Contributions, issues, and feature requests are welcome! For major changes, plea
 ## License
 
 Licensed under [MIT](LICENSE)
-
-## 🤝 Support
-
-Give a ⭐️ if you like this project!
-
-<a href="https://www.buymeacoffee.com/gurusabarish" target="_blank" rel="noopener"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40" width="145" alt="Buy Me A Coffee"></a>
