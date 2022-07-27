@@ -1,39 +1,35 @@
 {{ define "head"}}
 <meta name="description" content="{{ .Params.description }}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 <title>{{ .Title }}</title>
-{{ if eq .Site.Params.version 1 }}
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap" rel="stylesheet">
-<link href="/css/v1/blog.css" rel="stylesheet">
-{{ else if eq .Site.Params.version 2 }}
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap" rel="stylesheet">
-<link href="/css/v2/post.css" rel="stylesheet">
-{{ else if eq .Site.Params.version 3 }}
-<link href="/css/v3/post.css" rel="stylesheet">
-{{ else }}
-{{ end }}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+          delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "$", right: "$", display: false}
+          ]
+      });
+  });
+</script>
 {{ end }}
 
 
 {{ define "main" }}
-
-<section style="font-family: 'Roboto', sans-serif;">
-  <div class="container">
-    <div class="row blog-page-color">
+<section>
+  <div x-bind:class="isDark ? 'prose prose-invert max-w-screen-lg mx-auto' : 'prose max-w-screen-lg mx-auto'">
+    <div class="row blog-page-color p-5">
       <div class="col-md-9 py-4 px-0">
-        <div class="rounded shadow bg-light p-3 px-md-5 bg-light">
-          <h1 class="pb-2 text-center">{{ .Title }}</h1>
-          <article>
-            {{.Content}}
-          </article>
-        </div>
-      </div>
-      <div class="col-md-3 py-4">
-        <div class="bg-light shadow p-4 rounded mb-2 bg-light">
-          <h4>Table of content</h4>
-          {{.TableOfContents}}
-        </div>
+        {{ if eq .File.Ext "html"}}
+        {{ else }}
+          <h1 class="pb-2 text-center text-primary">{{ .Title }}</h1>
+        {{ end }}
+        <article class="text-primary">
+          {{.Content}}
+        </article>
       </div>
       {{ template "_internal/disqus.html" . }}
     </div>

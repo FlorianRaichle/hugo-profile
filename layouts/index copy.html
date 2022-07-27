@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{isDark: false}" x-bind:class="isDark ? 'dark' : ''">
+<head>
+  <title>{{- .Site.Title -}}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  {{- partial "sections/head.html" . -}}
+  <link rel="stylesheet" href="/css/v3/v3.css" media="all">
+  <link rel="stylesheet" href="/css/v3/navbar-footer.css" media="all">
+  <link rel="stylesheet" href="/css/v3/loader.css" />
+</head>
+
+<body class="text-primary bg-base text-base">
+  <!--<div id="loader" class="center"></div>-->
+    {{- partial "sections/navbar.html" . -}}
+
+    {{ if .Site.Params.disable_home }}
+    {{ else }}
+    {{- partial "sections/home.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.disable_about }}
+    {{ else }}
+    {{- partial "sections/about.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.disable_experience }}
+    {{ else }}
+    {{- partial "sections/experience.html" . -}}
+    {{end}}
+
+    {{ if .Site.Params.disable_education }}
+    {{ else }}
+    {{- partial "sections/education.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.disable_projects }}
+    {{ else }}
+    {{- partial "sections/projects.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.disable_achievements }}
+    {{ else }}
+    {{- partial "sections/achievements.html" . -}}
+    {{ end }}
+
+    {{ if .Site.Params.disable_contact }}
+    {{ else }}
+    {{- partial "sections/contact.html" . -}}
+    {{ end }}
+
+    {{- partial "sections/footer.html" . -}}
+    {{- partial "sections/scripts.html" . -}}
+</body>
+</html>

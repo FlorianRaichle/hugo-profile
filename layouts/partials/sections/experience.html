@@ -1,25 +1,29 @@
-<section id="experience" class="pb-3">
-  <div class="container-fluid">
-    <div class="text-dark text-center text-2xl p-5">Experience</div>
-    <div class="history p-5">
-        {{ range $index, $element := sort .Site.Data.experience "startdate"}}
-            <div class="history-item" id="{{ .company }}">
-              <span class="dot-double"></span>
-              <div class="h4 text-muted">
-                <span class="text-primary">{{ .company }}</span> - {{ .role }}
-              </div>
-              <div>
-                <small>{{ .startdate }}</small>
-                -
-                <small>{{ .enddate }}</small>
-              </div>
-              <ul class="py-2 ex">
-                {{ range .featuredpoints }}
-                <li class="ex-item"><span>{{ .point }}</span></li>
-                {{ end }}
-              </ul>
-            </div>
-        {{ end }}
+<section id="experience" class="pb-3 px-10 scroll-m-16">
+  <div class="max-w-screen-lg mx-auto py-10">
+    <div class="text-primary text-5xl pb-20 font-bold font-heading">Experience</div>
+    <div class="flex flex-col py-6 gap-14 relative
+    before:absolute before:w-0 before:block before:border-primary-100 before:top-0 before:bottom-0
+    before:border-r-2">
+      {{ range $index, $element := sort .Site.Data.experience "startdate" "desc"}}
+        <div id="{{ .company }}" class="relative px-24 odd:text-left ">
+          <div class="left-0 top-[11px] w-20 h-1 -translate-x-4 border-b-2 border-primary-100 absolute"></div>
+          <div class="left-0 top-[4px] w-5 h-5 -translate-x-[9px] border-2 border-primary absolute rounded-full"></div>
+          <span class="dot-double"></span>
+          <div class="h4 text-muted">
+            <span class="text-accent">{{ .company }}</span> - {{ .role }}
+          </div>
+          <div>
+            <small>{{ .startdate }}</small>
+            -
+            <small>{{ .enddate }}</small>
+          </div>
+          <ul class="ml-5 py-2 list-disc list-outside marker:text-accent">
+            {{ range .featuredpoints }}
+            <li ><span>{{ .point }}</span></li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
     </div>
   </div>
 </section>

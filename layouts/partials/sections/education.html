@@ -1,33 +1,11 @@
-<section id="education" class="education-backdark bg-section-dark">
-  {{/*  <div class="container-fluid">
-    <div class="text-dark text-center h3 pt-5">Education</div>
-    <div class="row row-eq-height text-md-right justify-content-center">
-      <div class="col-md-5 pl-5 py-3 pb-0 v-center">
-        <ul class="edu">
-          {{ range .Site.Data.education }}
-          <li class="py-2 edu-item">
-            <h5 class="text-muted" style="font-size: 20px">
-              {{ .degree }} - {{ .branch }}
-            </h5>
-            <div style="font-size: 15px">{{ .university }}</div>
-            <div class="">
-              <small>{{ .startedyear }}</small>
-              -
-              <small>{{ .graduation}}</small>
-            </div>
-          </li>
-          {{ end }}
-        </ul>        
-      </div>
-    </div>
-  </div>  */}}
-  <div class="pb-3">
-    <div class="text-dark text-center p-5 text-2xl">Education</div>
-    {{ range .Site.Data.education }}    
-    <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl relative">
+<section id="education" class="education-backdark bg-alternate px-10 scroll-m-16">
+  <div class=" max-w-screen-lg mx-auto py-10">
+    <div class="text-primary text-5xl pb-10 font-heading">Education</div>
+    {{ range sort .Site.Data.education "startedyear" "desc"}}    
+    <div class="overflow-hidden md:max-w-2xl relative">
       <div class="pb-4">
-        <div class="uppercase tracking-wide  text-blue-500 font-semibold">{{ .degree }} - {{ .branch }}</div>
-        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{.university}}</a>
+        <div class="uppercase tracking-wide  text-accent font-semibold">{{ .degree }} - {{ .branch }}</div>
+        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-primary hover:underline">{{.university}}</a>
         <p class="text-slate-500"><small>{{ .startedyear }}</small> - <small>{{ .graduation}}</small></p>
       </div>
     </div>
