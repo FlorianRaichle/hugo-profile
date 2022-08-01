@@ -5,8 +5,8 @@
         <div class="text-center">{{ .Site.Params.contact_content | emojify | markdownify }}</div>
         {{ if .Site.Params.email }}
         <div class="text-center pt-3">
-          <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" class="border-primary border-b-2 hover:text-light hover:border-primary-100">
-            {{ .Site.Params.getintouch | default "Get in Touch" }}
+          <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" class="border-primary border-b-2 hover:text-accent hover:border-primary-100">
+            {{ .Site.Params.email }}
           </a>
         </div>
         {{ end }}
@@ -15,7 +15,7 @@
           <div class="col-md-12">
             {{ if .Site.Params.github }}
             <a href="{{ .Site.Params.github }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-github fa-stack-1x"></i>
               </span>
@@ -24,7 +24,7 @@
 
             {{ if .Site.Params.twitter }}
             <a href="{{ .Site.Params.twitter }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x"></i>
               </span>
@@ -33,7 +33,7 @@
 
             {{ if .Site.Params.linkedin }}
             <a href="{{ .Site.Params.linkedin }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-linkedin fa-stack-1x"></i>
               </span>
@@ -42,7 +42,7 @@
 
             {{ if .Site.Params.instagram }}
             <a href="{{ .Site.Params.instagram }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-instagram fa-stack-1x"></i>
               </span>
@@ -51,7 +51,7 @@
 
             {{ if .Site.Params.facebook }}
             <a href="{{ .Site.Params.facebook }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x"></i>
               </span>
@@ -61,14 +61,14 @@
             {{ range .Site.Params.customSocialLinks }}
             {{ if .fontAwesomeIconName }}
             <a href="{{ .url }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa {{ .fontAwesomeIconName }} fa-stack-1x"></i>
               </span>
             </a>
             {{ else }}
             <a href="{{ .url }}">
-              <span class="fa-stack fa-lg text-blue-500 hover:text-blue-700">
+              <span class="fa-stack fa-lg text-accent hover:text-blue-700">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <img class="fab fa-lg center" src="{{ .imageURL }}" alt="{{ .name }}" width="40%" />
               </span>
