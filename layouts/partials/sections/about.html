@@ -7,11 +7,13 @@
         <div class="text-primary">
           {{ .description | markdownify }}
         </div>
+        {{ if .Site.Params.show_cv }}
         <div class="pt-6">
-          <a href="cv.pdf" target="_blank" download class="text-primary hover:underline font-bold">
+          <a href="cv.pdf" target="_blank" download class="text-primary hover:underline font-bold hover:text-accent">
             <i class="fa-solid fa-file-arrow-down pr-1"></i>  Download CV
           </a>
         </div>
+        {{ end }}
     </div>
     <div class="md:pl-0 basis-1/4 md:py-7">
       <div class="text-secondary h4 pb-2">Skills</div>
