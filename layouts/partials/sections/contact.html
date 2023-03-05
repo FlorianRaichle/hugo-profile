@@ -5,7 +5,7 @@
         <div class="text-center">{{ .Site.Params.contact_content | emojify | markdownify }}</div>
         {{ if .Site.Params.email }}
         <div class="text-center pt-3">
-          <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" class="border-primary border-b-2 hover:text-accent hover:border-primary-100">
+          <a href="mailto:{{ .Site.Params.email }}?subject=Say hi!" class="hover:text-accent hover:border-accent hover:border-b-2">
             {{ .Site.Params.email }}
           </a>
         </div>
